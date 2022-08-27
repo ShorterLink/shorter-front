@@ -2,6 +2,7 @@
 	import InfoCard from '$lib/modules/frontend/components/InfoCard/index.svelte';
 	import ShorterItem from '$lib/modules/frontend/components/ShorterItem/index.svelte';
 
+	export let data;
 	export let pageTitle = 'Dashboard';
 
 	let shortedLinks = [

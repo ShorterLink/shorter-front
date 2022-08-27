@@ -5,7 +5,7 @@
 	export let createdAt: string;
 	export let shorterUrl: string;
 	export let ID: string;
-	export let clicksCount: string;
+	export let clicksCount: number;
 
 	const dispatch = createEventDispatcher();
 
