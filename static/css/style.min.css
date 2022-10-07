@@ -760,6 +760,11 @@ body {
 	width: 24px;
 	height: 24px;
 }
+.github {
+	background-image: url(../img/svg/Bulk/github.svg);
+	width: 24px;
+	height: 24px;
+}
 .category,
 .user-3 {
 	background-image: url(../img/svg/Bulk/Category-white.svg);

@@ -103,7 +103,7 @@
 						</a>
 					</li>
 					<li>
-						<a class="danger" href="##">
+						<a class="danger" href="/?logout=true">
 							<i data-feather="log-out" aria-hidden="true" />
 							<span>Log out</span>
 						</a>

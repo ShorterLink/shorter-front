@@ -1,5 +1,8 @@
-<script>
+<script lang="ts">
+	import type { User } from '$lib/types';
+
 	export let menus = [];
+	export let user: User;
 </script>
 
 <aside class="sidebar">
@@ -25,7 +28,7 @@
 				</li>
 				<li>
 					<a class="show-cat-btn" href="##">
-						<span class="icon document" aria-hidden="true" />Posts
+						<span class="icon document" aria-hidden="true" />Links
 						<span class="category__btn transparent-btn" title="Open list">
 							<span class="sr-only">Open list</span>
 							<span class="icon arrow-down" aria-hidden="true" />
@@ -33,16 +36,16 @@
 					</a>
 					<ul class="cat-sub-menu">
 						<li>
-							<a href="posts.html">All Posts</a>
+							<a href="posts.html">All Links</a>
 						</li>
 						<li>
-							<a href="new-post.html">Add new post</a>
+							<a href="new-post.html">Reports</a>
 						</li>
 					</ul>
 				</li>
 				<li>
 					<a class="show-cat-btn" href="##">
-						<span class="icon folder" aria-hidden="true" />Categories
+						<span class="icon folder" aria-hidden="true" />Social Page
 						<span class="category__btn transparent-btn" title="Open list">
 							<span class="sr-only">Open list</span>
 							<span class="icon arrow-down" aria-hidden="true" />
@@ -50,93 +53,29 @@
 					</a>
 					<ul class="cat-sub-menu">
 						<li>
-							<a href="categories.html">All categories</a>
+							<a href="categories.html">List Social Pages</a>
+						</li>
+
+						<li>
+							<a href="categories.html">New Social Pages</a>
 						</li>
 					</ul>
-				</li>
-				<li>
-					<a class="show-cat-btn" href="##">
-						<span class="icon image" aria-hidden="true" />Media
-						<span class="category__btn transparent-btn" title="Open list">
-							<span class="sr-only">Open list</span>
-							<span class="icon arrow-down" aria-hidden="true" />
-						</span>
-					</a>
-					<ul class="cat-sub-menu">
-						<li>
-							<a href="media-01.html">Media-01</a>
-						</li>
-						<li>
-							<a href="media-02.html">Media-02</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a class="show-cat-btn" href="##">
-						<span class="icon paper" aria-hidden="true" />Pages
-						<span class="category__btn transparent-btn" title="Open list">
-							<span class="sr-only">Open list</span>
-							<span class="icon arrow-down" aria-hidden="true" />
-						</span>
-					</a>
-					<ul class="cat-sub-menu">
-						<li>
-							<a href="pages.html">All pages</a>
-						</li>
-						<li>
-							<a href="new-page.html">Add new page</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="comments.html">
-						<span class="icon message" aria-hidden="true" />
-						Comments
-					</a>
-					<span class="msg-counter">7</span>
 				</li>
 			</ul>
 			<span class="system-menu__title">system</span>
 			<ul class="sidebar-body-menu">
 				<li>
-					<a href="appearance.html"><span class="icon edit" aria-hidden="true" />Appearance</a>
+					<a href="appearance.html"><span class="icon edit" aria-hidden="true" />Release notes</a>
 				</li>
+
+				<li>
+					<a href="appearance.html"><span class="icon github" aria-hidden="true" />Github</a>
+				</li>
+
 				<li>
 					<a class="show-cat-btn" href="##">
-						<span class="icon category" aria-hidden="true" />Extentions
-						<span class="category__btn transparent-btn" title="Open list">
-							<span class="sr-only">Open list</span>
-							<span class="icon arrow-down" aria-hidden="true" />
-						</span>
+						<span class="icon user-3" aria-hidden="true" />Community
 					</a>
-					<ul class="cat-sub-menu">
-						<li>
-							<a href="extention-01.html">Extentions-01</a>
-						</li>
-						<li>
-							<a href="extention-02.html">Extentions-02</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a class="show-cat-btn" href="##">
-						<span class="icon user-3" aria-hidden="true" />Users
-						<span class="category__btn transparent-btn" title="Open list">
-							<span class="sr-only">Open list</span>
-							<span class="icon arrow-down" aria-hidden="true" />
-						</span>
-					</a>
-					<ul class="cat-sub-menu">
-						<li>
-							<a href="users-01.html">Users-01</a>
-						</li>
-						<li>
-							<a href="users-02.html">Users-02</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="##"><span class="icon setting" aria-hidden="true" />Settings</a>
 				</li>
 			</ul>
 		</div>
@@ -152,8 +91,8 @@
 				>
 			</span>
 			<div class="sidebar-user-info">
-				<span class="sidebar-user__title">Nafisa Sh.</span>
-				<span class="sidebar-user__subtitle">Support manager</span>
+				<span class="sidebar-user__title">{user?.name}</span>
+				<span class="sidebar-user__subtitle">ShorterLink</span>
 			</div>
 		</a>
 	</div>

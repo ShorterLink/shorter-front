@@ -1,0 +1,52 @@
+small:not(.label) {
+	opacity: 0.5;
+}
+
+.label {
+	font-weight: bold;
+}
+
+.link {
+	font-size: 0.9rem;
+	opacity: 0.7;
+}
+
+.click-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.option-btn {
+	padding: 5px 15px;
+	border-radius: 4px;
+	color: #fff;
+	opacity: 0.5;
+}
+
+.option-btn:hover {
+	opacity: 1;
+}
+
+.edit-btn {
+	background-color: #0161f7;
+}
+
+.delete-btn {
+	background-color: #f70101;
+}
+
+.disable-btn {
+	background-color: #f7ba01;
+}
+
+.action-buttons {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	z-index: 10;
+}
+
+.users-item-dropdown {
+	top: 40px;
+	right: 0px;
+}
