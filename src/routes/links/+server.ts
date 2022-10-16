@@ -1,4 +1,4 @@
-import { json } from '@sveltejs/kit';
+import { error, json } from '@sveltejs/kit';
 import * as api from '$lib/api';
 
 export async function POST({ request }: { request: Request }) {
@@ -10,25 +10,29 @@ export async function POST({ request }: { request: Request }) {
 
 	if (linkData.hash === '') delete linkData.hash;
 
-	console.log(token, 'linkData');
-
 	try {
 		const response = await api.post('/links', linkData, token);
 
-		console.log(response.status, 'oi');
+		if (response.status === 400) {
+			const data = await response.json();
 
-		if (response.status > 200) {
-			const res = await response.text();
-			console.log(res);
-			return json({ success: false });
+			throw error(400, data);
+		}
+
+		if (response.status > 204) {
+			throw error(500, 'Unable to save the link');
 		}
 
 		const data = await response.json();
 
 		return json(data);
-	} catch (err) {
-		console.log(err);
+	} catch (err: any) {
+		console.log('err', err);
 
-		return json({ teste: true });
+		if (err?.status) {
+			throw error(err.status, err.body);
+		}
+
+		throw error(500, 'Unable to save the link');
 	}
 }

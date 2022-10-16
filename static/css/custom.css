@@ -11,8 +11,11 @@
 	transition: all 0.4s ease-in-out;
 }
 
+.more-options {
+	max-height: 200px;
+}
 .hide-options {
-	max-height: 160px;
+	max-height: 0px;
 	overflow: hidden;
 }
 
@@ -20,4 +23,25 @@
 	font-size: 12px;
 	/* padding: 5px; */
 	height: 30px;
+}
+
+.invalid {
+	display: flex;
+	align-items: center;
+	align-content: center;
+	margin-top: 5px;
+	background-color: rgb(255, 155, 155);
+	padding: 10px;
+	color: #802121;
+	border-radius: 6px;
+}
+
+.invalid > i {
+	background-color: #802121;
+	margin-right: 10px;
+}
+
+.invalid-field {
+	border: 2px solid !important;
+	border-color: rgb(255, 155, 155) !important;
 }
